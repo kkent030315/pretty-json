@@ -4,19 +4,15 @@
       <div class="left">
         <div class="block horizontal-connected">
           <div class="editor-header">Input</div>
-          <div id="editor-left">{"widget": {"debug": "on",
-    "window": {
-        "title": "Sample Konfabulator Widget","name": 
-		"main_window","width": 500,"height": 500
-    },"image": { "src": "Images/Sun.png","name": "sun1",
-	"hOffset": 250,"vOffset": 250,"alignment": "center"
-    },
-    "text": {"data": "Click Here","size": 36,"style": 
-	"bold","name": "text1","hOffset": 250,"vOffset": 100,
-	"alignment": "center","onMouseUp": 
-	"sun1.opacity = (sun1.opacity / 100) * 90;"
-    }
-}} </div>
+          <div id="editor-left">
+            {"widget": {"debug": "on", "window": { "title": "Sample Konfabulator
+            Widget","name": "main_window","width": 500,"height": 500 },"image":
+            { "src": "Images/Sun.png","name": "sun1", "hOffset": 250,"vOffset":
+            250,"alignment": "center" }, "text": {"data": "Click Here","size":
+            36,"style": "bold","name": "text1","hOffset": 250,"vOffset": 100,
+            "alignment": "center","onMouseUp": "sun1.opacity = (sun1.opacity /
+            100) * 90;" } }}
+          </div>
         </div>
       </div>
       <div class="right">
@@ -60,14 +56,9 @@ export default {
     },
     beatify: function (x) {
       let val = x.session.getValue();
-      //Remove leading spaces
-      let array = val.split(/\n/);
-      array[0] = array[0].trim();
-      val = array.join("\n");
-      //Actual beautify (prettify)
-      val = js_beautify(val);
-      //Change current text to formatted text
-      x.session.setValue(val);
+      let lines = val.split(/\n/);
+      lines[0] = lines[0].trim();
+      x.session.setValue(js_beautify(lines.join("\n")));
     },
   },
 };
