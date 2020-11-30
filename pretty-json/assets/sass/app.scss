@@ -1,7 +1,7 @@
 @import "variables";
 
 @mixin primary-background-gradient() {
-    background: #fceabb;
+    background: $color-gradient-fallback;
     background: -webkit-linear-gradient(to right, $color-secondary, $color-primary);
     background: linear-gradient(to right, $color-secondary, $color-primary);
 }
