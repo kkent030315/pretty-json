@@ -9,8 +9,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.12.2",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "nuxt-highlightjs": "^1.0.1",
+    "tippy.js": "^6.2.7",
+    "vue-tippy": "^4.7.2"
   },
   "devDependencies": {
     "node-sass": "^5.0.0",
